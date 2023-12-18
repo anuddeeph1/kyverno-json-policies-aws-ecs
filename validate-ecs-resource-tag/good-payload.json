@@ -132,6 +132,9 @@
             "runtime_platform": [],
             "skip_destroy": false,
             "tags": null,
+            "tags": { 
+               "test": "anup"
+            },
             "task_role_arn": null,
             "volume": []
           },

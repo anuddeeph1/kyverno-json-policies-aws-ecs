@@ -13,6 +13,7 @@ spec:
     match:
       any:
       - type: aws_ecs_service
+      - type: aws_ecs_task_definition
     assert:
       all:
       - check:
