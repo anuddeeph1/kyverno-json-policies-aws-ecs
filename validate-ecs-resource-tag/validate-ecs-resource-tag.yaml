@@ -16,9 +16,10 @@ spec:
       - type: aws_ecs_task_definition
     assert:
       all:
-      - check:
+      - message: ECS services and tasks are required to have assigned tags. The use of the tag key 'Department' with the tag value 'Accounting' is not permitted.
+        check:
           values:
-            ~.tags: {}
-            #~.tags:
-            #  equals: null
-        message: ECS services should have tags assigned to them.
+            #(length(keys(tags)) > `0`): true
+            #(tags.Department!='Accounting'): true
+            (tags != null): true
+            (tags.Department!='Accounting'): true

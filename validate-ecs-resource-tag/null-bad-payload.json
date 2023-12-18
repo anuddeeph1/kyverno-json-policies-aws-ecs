@@ -79,9 +79,7 @@
             "scheduling_strategy": "REPLICA",
             "service_connect_configuration": [],
             "service_registries": [],
-            "tags": { 
-               "Department": "DevOps"
-            },
+            "tags": null,
             "timeouts": null,
             "wait_for_steady_state": false
           },
@@ -132,9 +130,6 @@
             "runtime_platform": [],
             "skip_destroy": false,
             "tags": null,
-            "tags": { 
-               "Department": "DevOps"
-            },
             "task_role_arn": null,
             "volume": []
           },

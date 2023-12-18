@@ -79,7 +79,9 @@
             "scheduling_strategy": "REPLICA",
             "service_connect_configuration": [],
             "service_registries": [],
-            "tags": null,
+            "tags": {
+               "Department": "Accounting"
+             },
             "timeouts": null,
             "wait_for_steady_state": false
           },
@@ -129,7 +131,9 @@
             ],
             "runtime_platform": [],
             "skip_destroy": false,
-            "tags": null,
+            "tags": {
+               "Department": "Accounting"
+             },
             "task_role_arn": null,
             "volume": []
           },
