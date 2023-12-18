@@ -1,0 +1,23 @@
+apiVersion: json.kyverno.io/v1alpha1
+kind: ValidatingPolicy
+metadata:
+  annotations:
+    description.policy.kyverno.io: This Policy ensures that ECS services should have tags assigned to them.
+    title.policy.kyverno.io: ECS resource tag
+  labels:
+    ecs.aws.tags.kyverno.io: ecs-service
+  name: validate-ecs-resource-tag
+spec:
+  rules:
+  - name: require-ecs-tag
+    match:
+      any:
+      - type: aws_ecs_service
+    assert:
+      all:
+      - check:
+          values:
+            ~.tags: {}
+            #~.tags:
+            #  equals: null
+        message: ECS services should have tags assigned to them.
